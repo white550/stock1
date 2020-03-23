@@ -1,0 +1,40 @@
+ //获取界面中三个下拉框的信息
+            string goodsId = comboBox1.Text;//商品编号
+            string goodsName = comboBox2.Text;//商品名称
+            string goodsType = comboBox3.Text;//商品的类型
+            //进行查询的数据的sql语句
+            string sql = "";
+            if (goodsId!="不限"&&goodsName=="不限"&&goodsType=="不限")
+            {
+                sql = string.Format("select GoodsID 商品编号,GName 商品名称,UnitPrice 单价,Manufacture 生产厂家,c.CName 类型 from Goods g,Category c where g.CategoryId=c.Id and g.GoodsID='{0}'",goodsId);
+            }
+            else if (goodsId != "不限" && goodsName != "不限" && goodsType == "不限")
+            {
+                sql = string.Format("select GoodsID 商品编号,GName 商品名称,UnitPrice 单价,Manufacture 生产厂家,c.CName 类型 from Goods g,Category c where g.CategoryId=c.Id and g.GoodsID='{0}' and GName='{1}'",goodsId,goodsName);
+            }
+            else if (goodsId != "不限" && goodsName != "不限" && goodsType != "不限")
+            {
+                sql = string.Format("select GoodsID 商品编号,GName 商品名称,UnitPrice 单价,Manufacture 生产厂家,c.CName 类型 from Goods g,Category c where g.CategoryId=c.Id and g.GoodsID='{0}' and GName='{1}' and c.CName='{2}'",goodsId,goodsName,goodsType);
+            }
+            else if (goodsId != "不限" && goodsName == "不限" && goodsType != "不限")
+            {
+                sql = string.Format("select GoodsID 商品编号,GName 商品名称,UnitPrice 单价,Manufacture 生产厂家,c.CName 类型 from Goods g,Category c where g.CategoryId=c.Id and g.GoodsID='{0}' and c.CName='{1}'", goodsId, goodsType);
+            }
+            else if (goodsId == "不限" && goodsName == "不限" && goodsType != "不限")
+            {
+                sql = string.Format("select GoodsID 商品编号,GName 商品名称,UnitPrice 单价,Manufacture 生产厂家,c.CName 类型 from Goods g,Category c where g.CategoryId=c.Id and c.CName='{0}'", goodsType);
+            }
+            else if (goodsId == "不限" && goodsName != "不限" && goodsType != "不限")
+            {
+                sql = string.Format("select GoodsID 商品编号,GName 商品名称,UnitPrice 单价,Manufacture 生产厂家,c.CName 类型 from Goods g,Category c where g.CategoryId=c.Id and GName='{0}' and c.CName='{1}'", goodsName,goodsType);
+            }
+            else if (goodsId == "不限" && goodsName != "不限" && goodsType == "不限")
+            {
+                sql = string.Format("select GoodsID 商品编号,GName 商品名称,UnitPrice 单价,Manufacture 生产厂家,c.CName 类型 from Goods g,Category c where g.CategoryId=c.Id and GName='{0}'", goodsName);
+            }
+            else if ((goodsId == "不限" && goodsName == "不限" && goodsType == "不限"))
+            {
+                sql = string.Format("select GoodsID 商品编号,GName 商品名称,UnitPrice 单价,Manufacture 生产厂家,c.CName 类型 from Goods g,Category c where g.CategoryId=c.Id");
+            }
+            //指定数据源
+            this.dataGridView1.DataSource = DBHelper.GetDataTable(sql,null);

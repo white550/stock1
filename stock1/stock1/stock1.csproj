@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A6EB8D5F-2F00-403D-B54A-CD9BFFED74D2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>stock1</RootNamespace>
+    <AssemblyName>stock1</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Category\CategoryAddAndEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Category\CategoryAddAndEdit.Designer.cs">
+      <DependentUpon>CategoryAddAndEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Category\CategoryList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Category\CategoryList.Designer.cs">
+      <DependentUpon>CategoryList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\CustomerAddAndEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerAddAndEdit.Designer.cs">
+      <DependentUpon>CustomerAddAndEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\CustomerList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerList.Designer.cs">
+      <DependentUpon>CustomerList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBHelper.cs" />
+    <Compile Include="DefaultFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DefaultFrm.Designer.cs">
+      <DependentUpon>DefaultFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Depot\DepotAddAndEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Depot\DepotAddAndEdit.Designer.cs">
+      <DependentUpon>DepotAddAndEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Depot\DepotList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Depot\DepotList.Designer.cs">
+      <DependentUpon>DepotList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Goods\DepotAddAndEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Goods\DepotAddAndEdit.Designer.cs">
+      <DependentUpon>DepotAddAndEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Goods\GoodsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Goods\GoodsList.Designer.cs">
+      <DependentUpon>GoodsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InStock\InStockAddAndEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InStock\InStockAddAndEdit.Designer.cs">
+      <DependentUpon>InStockAddAndEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InStock\InStockList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InStock\InStockList.Designer.cs">
+      <DependentUpon>InStockList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CategoryModel.cs" />
+    <Compile Include="Model\CustomerModel.cs" />
+    <Compile Include="Model\DepotModel.cs" />
+    <Compile Include="Model\GoodsModel.cs" />
+    <Compile Include="Model\ProviderModel.cs" />
+    <Compile Include="OutStock\OutStockAddAndEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OutStock\OutStockAddAndEdit.Designer.cs">
+      <DependentUpon>OutStockAddAndEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OutStock\OutStockList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OutStock\OutStockList.Designer.cs">
+      <DependentUpon>OutStockList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provider\ProviderAddAndEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Provider\ProviderAddAndEdit.Designer.cs">
+      <DependentUpon>ProviderAddAndEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Provider\StorageInfoList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Provider\StorageInfoList.Designer.cs">
+      <DependentUpon>StorageInfoList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StorageInforList.cs" />
+    <Compile Include="StorageInfo\ProviderList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StorageInfo\ProviderList.Designer.cs">
+      <DependentUpon>ProviderList.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Category\CategoryAddAndEdit.resx">
+      <DependentUpon>CategoryAddAndEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Category\CategoryList.resx">
+      <DependentUpon>CategoryList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\CustomerAddAndEdit.resx">
+      <DependentUpon>CustomerAddAndEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\CustomerList.resx">
+      <DependentUpon>CustomerList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DefaultFrm.resx">
+      <DependentUpon>DefaultFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Depot\DepotAddAndEdit.resx">
+      <DependentUpon>DepotAddAndEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Depot\DepotList.resx">
+      <DependentUpon>DepotList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Goods\DepotAddAndEdit.resx">
+      <DependentUpon>DepotAddAndEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Goods\GoodsList.resx">
+      <DependentUpon>GoodsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InStock\InStockAddAndEdit.resx">
+      <DependentUpon>InStockAddAndEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InStock\InStockList.resx">
+      <DependentUpon>InStockList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OutStock\OutStockAddAndEdit.resx">
+      <DependentUpon>OutStockAddAndEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OutStock\OutStockList.resx">
+      <DependentUpon>OutStockList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Provider\ProviderAddAndEdit.resx">
+      <DependentUpon>ProviderAddAndEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Provider\StorageInfoList.resx">
+      <DependentUpon>StorageInfoList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StorageInfo\ProviderList.resx">
+      <DependentUpon>ProviderList.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\cai.ico" />
+    <Content Include="Images\Category.png" />
+    <Content Include="Images\Close.png" />
+    <Content Include="Images\Customer.png" />
+    <Content Include="Images\Depot.png" />
+    <Content Include="Images\Goods.png" />
+    <Content Include="Images\InStock.png" />
+    <Content Include="Images\OutStock.png" />
+    <Content Include="Images\Provider.png" />
+    <Content Include="Images\Storage.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
